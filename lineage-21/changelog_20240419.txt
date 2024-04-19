@@ -1,0 +1,637 @@
+====================
+     2024-04-19    
+====================
+* art
+b19beaf art: Disable debug tracing on production builds [Danny Lin]
+
+* build/make
+25202af Always use release-keys for ro.build.tags [Danny Lin]
+
+* build/soong
+9bfdfce use speed compiler filter for dexpreopt by default [Daniel Micay]
+42a01b8 cleanbuild: Remove obj/{DTB,DTBO,KERNEL}_OBJ on installclean [Jason Edson]
+8fcc08e ui: Pass the exact CPU thread count to -j [Park Ju Hyung]
+d52abe5 soong: Specify heap size for metalava for S+ [Michael W]
+da57b22 soong: increase heap size for metalava [LeddaZ]
+
+* device/xiaomi/lisa
+7c3372e lisa: Pin `modem.img` from V14.0.2.0.TKOMIXM [Giovanni Ricca]
+c948a1b lisa: Update blobs to V816.0.3.0.UKOMIXM [Giovanni Ricca]
+
+* device/xiaomi/sm6250-common
+1950780 sm6250-common: Set arch variant to armv8-2a-dotprod [Adithya R]
+777f159 sm6250-common: Define boot image security patch [Alexander Koskovich]
+4615009 sm6250-common: Set VENDOR_SECURITY_PATCH to platform [Chris Fries]
+
+* device/xiaomi/sm8350-common
+2a87cd5 sm8350-common: Set arch variant to armv8-2a-dotprod [Adithya R]
+0a720ef sm8350-common: Define boot image security patch [Alexander Koskovich]
+aef1d71 sm8350-common: Set VENDOR_SECURITY_PATCH to platform [Chris Fries]
+5228b47 sm8350-common: Don't copy camera config [Giovanni Ricca]
+
+* frameworks/av
+f3952570e5 Codec2: Extend the queue empty work hack to MTK decoders too [bengris32]
+
+* frameworks/base
+2c3486913 core: Hide ADB and developer setting enable status [someone5678]
+d289563e9 gmscompat: AttestationService: Schedule only when GMS is installed [SamarV-121]
+cbee00f9e gmscompat: Un-spoof GMS while adding google account [Adithya R]
+da39e61b4 gmscompat: Add prop to disable gms spoofing [SamarV-121]
+76139a3a8 gmscompat: Dynamically spoof props for GMS [SamarV-121]
+fb8a724a5 gmscompat: Allow setting any field in certified build props [Adithya R]
+0d6c32242 gmscompat: Remove unwanted spoofing of DEVICE_INITIAL_SDK_INT [SamarV-121]
+730607269 gmscompat: Get package name from context instead of app [jhenrique09]
+ea4b151ba base: Add Safetynet/Play Integrity hax [Danny Lin]
+746ff2e0d ViewConfiguration: Set scroll friction to 0.009 [Alex Naidis]
+ae9688bf1 AbsListView: Improve scrolling cache [Pawit Pornkitprasan]
+aa88e4bf9 SystemUI: respect setting for use of DeviceControlsTile from lockscreen [Dmitry Muhomor]
+550f20b8e SystemUI: allow to use some QS tiles while device is locked [Dmitry Muhomor]
+31a385fc0 SystemUI: require unlocking to use QS tiles by default [Dmitry Muhomor]
+7c704b9bf core: PinSet: Fixup and improve algorithms caching [jhonboy121]
+e04c5ae4c Cache pin algorithms in PinSet [Till Kottmann]
+f75bbcac4 Cache KeyStoreService [Till Kottmann]
+47d060bc5 (Point) Only calculate sin and cos once [Till Kottmann]
+18345309e LayoutInflater: Opportunistically create views directly for performance [Danny Lin]
+01a776f8b SystemServiceRegistry: Replace ArrayMap with HashMap for performance [Danny Lin]
+0006b53e4 LocalServices: Replace ArrayMap with HashMap for performance [Danny Lin]
+e5954ecdf ThemedResourceCache: Replace ArrayMap with HashMap for performance [Danny Lin]
+80917ee82 Trace: Disable debug tracing on production builds [Danny Lin]
+6dc29279c Revert "Pre-emptively take a snapshot when finishing an activity before changing visibility" [Danny Lin]
+a4e6b17ca Revert "Revert "Update light/dark detection."" [Alexander Winkowski]
+67fb09f41 Revert "Enable color threshold editing via SystemProperties" [Alexander Winkowski]
+8901149d2 hwui: Compile without no-omit-frame-pointer [Sourajit Karmakar]
+7c3e6ce7a libhwui: compile for performance [Vaisakh Murali]
+fe8133910 libhwui: enable O3 when compiling for perf [Vaisakh Murali]
+e66f3e226 libhwui: remove deprecated perf flags [Vaisakh Murali]
+8744b2e6f SystemUI: Remove Android build number from QS footer [Danny Lin]
+832ad3655 SystemUI: Reduce screenshot dismiss delay to 3 seconds [Danny Lin]
+a1a766086 core: Remove old app target SDK dialog [Danny Lin]
+3e7767c42 core: Remove default aspect ratio limit for old apps [Danny Lin]
+f39c8da90 AuthRippleView: Allow disabling ripple unlock animation using overlay [jhenrique09]
+a94c4e493 base: SystemUI: Allow flags to be overrideable [Jeferson]
+a5e62c348 Revert "Ignore the charging ripple flag." [Jeferson]
+d9ac643cf Revert "Update Media Seekbar Thumb Shape" [00day0]
+
+* frameworks/native
+ba98139d17 SF: Re-enable expensive rendering for blurs [Adithya R]
+7639b1c627 SF: Don't enable expensive rendering for unknown dataspace [Adithya R]
+2d5e435520 sf: Add check for unknown dataspace [BOREDDY MAHIDHAR]
+566091410b SF: Add retry to EventThread postEvent [Rheygine Medel]
+40f2138bd5 sf: upsert RenderEngine's caches [Ramakant Singh]
+983f397940 Modify dimming threshold from 0.2 to 0.9. [linkai]
+c99b145f42 libbinder: Suppress log spam when unlinking death recipients [Danny Lin]
+
+* hardware/qcom-caf/sm8150/audio
+f0fd712 audio_amplifier: Change the enable amplifier function location [Luofan Chen]
+
+* kernel/xiaomi/mt6895
+a2ff285b745f ARM64: configs: gki_defconfig: Build with ThinLTO [Giovanni Ricca]
+
+* kernel/xiaomi/sm8350
+1717889d1278 arm64: configs: lahaina: Set Local version to "-perf" [Giovanni Ricca]
+a3e484efdc34 audio: include: uapi: uint32_t -> __u32 [Giovanni Ricca]
+068ee1da077a arm64: configs: xiaomi: Enable CFQ group schedule [Rick Yiu]
+355dcf6ebcdb arm64: configs: xiaomi: Enable CONFIG_EXFAT_FS [Sandeep Patil]
+6c985fa7afd3 arm64: configs: xiaomi: Enable BQ 1S battery cell config for star [FlowerSea0208]
+130699f82222 arm64: configs: xiaomi: Enable redwood specific power config [TheStrechh]
+b2990420ee37 arm64: configs: xiaomi: Enable venus specific power config [Ramii Ahmed]
+b6136b36402f arm64: configs: xiaomi: Enable renoir specific power config [Arian]
+fca343f3de11 arm64: configs: xiaomi: Enable mi wireless charging for odin star and venus [Arian]
+e35720a684ab arm64: configs: xiaomi: Enable ultra wideband for odin [Arian]
+f11898623cc2 arm64: configs: xiaomi: Enable time of flight sensor for odin and star [Arian]
+8f51b7d89faf arm64: configs: xiaomi: Enable image signal processor for cetus [Arian]
+ce694e53c40c arm64: configs: xiaomi: Enable pinctrl configs [Giovanni Ricca]
+17313f306343 arm64: configs: xiaomi: Disable Vibrator-LDO driver [Giovanni Ricca]
+c4c2ab482fa4 arm64: configs: xiaomi: Build Awinic haptic drivers inline [Giovanni Ricca]
+1ae91c79ba97 arm64: configs: xiaomi: Enable haptics drivers [Giovanni Ricca]
+b966d9ac9f9d arm64: configs: xiaomi: Enable fingerprint configs [Giovanni Ricca]
+5bcf6f7bfb3f arm64: configs: xiaomi: Enable MIUS proximity sensor [Giovanni Ricca]
+c3df1d4b1110 arm64: configs: xiaomi: Enable bq fuel guage [Giovanni Ricca]
+3a847227b74b arm64: configs: xiaomi: Enable bq2597x [Giovanni Ricca]
+ad3e7c42f849 arm64: configs: xiaomi: Build qti charger as a module [Giovanni Ricca]
+34bccb1aa3fa arm64: configs: xiaomi: Enable IR configs [Arian]
+7c3fb9702679 arm64: configs: xiaomi: Build icnss2 as module [Giovanni Ricca]
+fd51e9f77a9d arm64: configs: xiaomi: Build cnss2 as module [Arian]
+145deea4b87a arm64: configs: xiaomi: Enable qca6490/qca6750 [Arian]
+46a658a69a31 arm64: configs: xiaomi: Enable qcacld [Luca Stefani]
+02d35a931758 arm64: configs: xiaomi: Enable mi thermald interface [Giovanni Ricca]
+09a219118862 arm64: configs: xiaomi: Enable mi hwid driver [Arian]
+eed42357cef9 arm64: configs: xiaomi: Disable unused touchscreen drivers [Arian]
+4a6225bbc3e6 arm64: configs: xiaomi: Enable touchscreen drivers [Giovanni Ricca]
+246e86e9e966 arm64: configs: xiaomi: Enable CONFIG_BUILD_ARM64_DT_OVERLAY [Demon000]
+f72a5712239b arm64: configs: Initial xiaomi stub fragmented configs [Giovanni Ricca]
+428af7d946c5 arm64: Generate lahaina-qgki_defconfig [Arian]
+72288c732fcb .gitignore: Don't ignore generated lahaina defconfig [Giovanni Ricca]
+20bc469fb6b4  arm64: dts: Import redwood device tree [Giovanni Ricca]
+2ada563b9bf6 arm64: dts: Import zijin device tree [Giovanni Ricca]
+21027cd18204 arm64: dts: Use seperate mi2s rx and tx in taoyao overlay [Arian]
+b747a0243f57 arm64: dts: Import taoyao device tree [Giovanni Ricca]
+3a3187d7affa arm64: dts: Import mona device tree [Giovanni Ricca]
+d5bdf7b70407 arm64: dts: Import lisa device tree [Giovanni Ricca]
+88313efc7e26 arm64: dts: Import xiaomi-sm7325-common [Giovanni Ricca]
+25329fa79299 arm64: dts: renoir: Configure goodix config array [Arian]
+2456dfbd89f3 arm64: dts: Use seperate mi2s rx and tx in xiaomi sm7350 overlay [Arian]
+7d8823490ffd arm64: dts: Import renoir device tree [Arian]
+3d417855aca0 arm64: dts: Import vili device tree [Giovanni Ricca]
+6c0acb32fceb arm64: dts: Import odin device tree [Arian]
+f4c26e00d534 arm64: dts: mars: Add ir-spi dts [EcrosoftXiao]
+43a10c1d97b9 arm64: dts: Import mars device tree [Arian]
+3fbbea23a3a4 arm64: dts: star: Add fingerprint_goodix for star [EcrosoftXiao]
+f90ed36aac89 arm64: dts: star: Add ir-spi dts [FlowerSea0208]
+a9644da13f94 arm64: dts: Import star device tree [Arian]
+54904eb79672 arm64: dts: Import cetus device tree [Arian]
+ff6f0dd83175 arm64: dts: haydn: Add ir-spi [AdarshGrewal]
+4faf27428734 arm64: dts: Import haydn device tree [Erfan Abdi]
+b3a6f1044115 arm64: dts: venus: shared-pinctrl-gpios -> gpios-shared-pinctrl [Cosmin Tanislav]
+06edfd17c169 arm64: dts: venus: Add fingerprint_goodix [Giovanni Ricca]
+ed40a0c1bd8c arm64: dts: venus: Add ir-spi [Giovanni Ricca]
+0feb9b8d0357 arm64: dts: Import venus device tree [Cosmin Tanislav]
+0c0cfade2c47 arm64: dts: Import xiaomi-sm8350-common [Arian]
+dcff6ae2541c arm64: dts: Correct physical panel dimensions [Arian]
+37662be581bb arm64: dts: yupik: Increase minimum backlight level for M20 panel [TheStrechh]
+5c1a399ac000 arm64: dts: yupik: Increase minimum backlight level for K9D panels [Arian]
+12d9d2b33ab3 arm64: dts: yupik: Import panel configurations [Giovanni Ricca]
+56fa0cca5495 arm64: dts: shima: Increase minimum backlight level for K9 panels [Arian]
+1caadc3b71df arm64: dts: shima: Import k9 panel configurations [Arian]
+c8d5b03e9f76 arm64: dts: lahaina: Drop 90Hz timings [FlowerSea0208]
+b37db5989b38 arm64: dts: lahaina: Import panel configurations [Arian]
+a03c8ad52d61 arm64: dts: pm7250b: Apply xiaomi thermal changes [Giovanni Ricca]
+3f7a31825751 arm64: dts: pm7250b: Disable bcl_soc [Giovanni Ricca]
+8c4e5db83235 arm64: dts: pm7325b: Disable bcl_soc [Giovanni Ricca]
+b578f3b1c98b arm64: dts: yupik: Apply xiaomi pinctrl changes [Giovanni Ricca]
+263206a6bf9b arm64: dts: yupik: Disable mi2s audio node [Giovanni Ricca]
+a75123fb21ef arm64: dts: yupik: Enable Primary TDM1 audio node support [Giovanni Ricca]
+70b9b03d7220 arm64: dts: yupik: Don't register eud usb port [Giovanni Ricca]
+8509710f7cff arm64: dts: yupik: Add PM8008I label [Giovanni Ricca]
+d80aec590b87 arm64: dts: yupik: Add PM8008J label [Giovanni Ricca]
+e7af5059fa32 arm64: dts: yupik: Enable pon_pbs [Giovanni Ricca]
+3f8d78401a9d arm64: dts: yupik: Apply xiaomi thermal changes [Giovanni Ricca]
+b9ce73d2de22 arm64: dts: yupik: Enable nv-mac [Giovanni Ricca]
+dc81c4dd76dc arm64: dts: yupik: Change memory regions [Giovanni Ricca]
+55a905a508f7 arm64: dts: shima: Enable nv-mac [Arian]
+5f6b48265820 arm64: dts: shima: Remove ramoops memory region [Arian]
+230ba8f71794 arm64: dts: shima: Change memory regions [Arian]
+3ff972a172e6 arm64: dts: shima: Increase modem temperature trips [Arian]
+f2392f6675a8 arm64: dts: shima: Add haptics effects and F0 low rate protection properties [Arian]
+10bdf2dd8d8f arm64: dts: shima: Decrease i2c pmic dropout voltage [Arian]
+00418ebad358 arm64: dts: shima: Apply xiaomi thermal zone changes [Arian]
+19485269f8fd arm64: dts: shima: Increase voltages [Arian]
+1bc9bd18747f arm64: dts: shima: Do not enable ldod12 and ldod13 regulators by default [Arian]
+6b94b9dee6c6 arm64: dts: shima: Increase ldod1 max regulator voltage [Arian]
+d18868a445aa arm64: dts: shima: Enable input on gpio0,1 [Arian]
+6dc84190ccd4 arm64: dts: shima: Remove non-secure display memory region [Arian]
+5610a7b053dc arm64: dts: lahaina: enable nv-mac [Arian]
+cfe090d9f2c5 arm64: dts: lahaina: rename modem-lte-sub6 thermal zones [Arian]
+29e6cb343236 arm64: dts: lahaina: increase mic bias voltage for wcd938x codec [Arian]
+6f9d82ffd342 arm64: dts: lahaina: disable wsa master [Arian]
+94ef084c46f1 arm64: dts: lahaina: enable hw-scl-stretch-en in fast plus mode [Arian]
+a549f7df9e37 arm64: dts: lahaina: add om8350c flashlight [Cosmin Tanislav]
+d8e6f4c5748d arm64: dts: lahaina: add kpdpwr resin bark definition [Cosmin Tanislav]
+8d90531ae6fd arm64: dts: lahaina: match bootloader memory zones [Cosmin Tanislav]
+31d6a977dd43 arm64: dts: pm8350b: Force IBB regulator into CCM mode when it gets enabled [Arian]
+2274291a0f28 arm64: dts: pm8350b: Apply qcom-hv-haptics changes [Arian]
+4f951dd119cc arm64: dts: lahaina: add F0 low rate protection properties for qcom-hv-haptics [Arian]
+10bc8c313065 arm64: dts: lahaina: add PM8008I and PM8008J labels [Arian]
+2f84c6589e8c arm64: dts: lahaina: remove thermal zones [Cosmin Tanislav]
+078851dbd73a arm64: dts: lahaina: remove memory offline support [Cosmin Tanislav]
+0a0ded620ec9 arm64: dts: lahaina: remove eud enable register support [Cosmin Tanislav]
+7af459f64992 arm64: dts: lahaina: do not enable sdhc io regulator by default [Cosmin Tanislav]
+8b8d63c38761 arm64: dts: lahaina: modify sdhc regulator voltage [Cosmin Tanislav]
+74e637a73ae2 arm64: dts: lahaina: enable input on gpio0,1 [Cosmin Tanislav]
+2ad46a5df8ab arm64: dts: lahaina: configure gpio47 as qupv3_se10_spi_sleep_cs [Arian]
+6ac18d184593 arm64: dts: lahaina: import xiaomi gpio display changes [Cosmin Tanislav]
+550ba4af3e45 arm64: dts: msm-audio-lpass: apply primary audio interface changes [Arian]
+20ce69b7a57b arm64: dts: lahaina: add tertiary audio interface [Cosmin Tanislav]
+7bcb44bf30c1 arm64: dts: lahaina: remove non-secure display memory region [Cosmin Tanislav]
+5ff62d4f3470 drivers: backlight: Notify userspace on brightness changes [Adithya R]
+56a6f43757ca input: Import stmvl53l5 driver [Giovanni Ricca]
+59cbd8e1eff7 input: misc: qcom-hv-haptics: Import xiaomi changes [Giovanni Ricca]
+c2957c711393 input: misc: aw86927_haptic: Replace mtk with qcom properties [TheStrechh]
+69d782623b15 input: misc: Import Awinic AW86927 haptic driver [Giovanni Ricca]
+ae5b4f16c8f2 input: misc: Import Awinic AW8622X haptic driver [Giovanni Ricca]
+76fc6fc27e20 input: misc: Import Awinic AW8624 haptic driver [Giovanni Ricca]
+ea7f6008ac2d input: misc: Import Awinic AW8697 haptic driver [Giovanni Ricca]
+9ef9fd9dbfd6 input: fingerprint: fpc_tee: Make vreg control mode runtime configurable [Arian]
+a4fb2d2b95d1 input: fingerprint: fpc_tee: Disable regulator on disable [Arian]
+79f1a2112db7 input: fingerprint: fpc_tee: Remove unnecessary gpio 121 wake setup [Arian]
+41b9608a0dc8 input: fingerprint: fpc_tee: Extend drm interface exclusions [Arian]
+2e939892c283 input: fingerprint: fpc_tee: Use mi display notifier [Arian]
+be2e1d12d673 input: fingerprint: Import psyche-r-oss fpc_tee driver [Arian]
+ce0f3c7d70b0 input: goodix_tee: Disable Navigation events and key maps [Divyanshu-Modi]
+7176fd6a1732 input: fingerprint: Import Goodix tee driver [Giovanni Ricca]
+70e9564c8444 input: fingerprint: goodix_fod: only schedule work when drm interface not enabled [Cosmin Tanislav]
+b68b4f0d8d40 input: fingerprint: Import Goodix fod driver [Giovanni Ricca]
+8a44d3fe3c10 input: touchscreen: xiaomi_touch: Fix prototype errors [Giovanni Ricca]
+4c2a27a4a682 input: touchscreen: xiaomi_touch: import fod_press_status from mayfly-s-oss [FlowerSea0208]
+39512da2eb31 input: touchscreen: Import xiaomi touch driver [Arian]
+30cccec5b794 input: touchscreen: synaptics_s3908p: Omit mi_disp_set_fod_queue_work [Giovanni Ricca]
+2dafd7d05830 input: touchscreen: synaptics_s3908p: Load the correct fw file [Giovanni Ricca]
+48a63dab8f04 input: touchscreen: synaptics_s3908p: Rename Kconfig entries [Giovanni Ricca]
+5d9992b6d329 input: touchscreen: Import Synaptics S3908P driver [Giovanni Ricca]
+c55a1756d234 input: touchscreen: Move goodix qgki config to gt9897t and gt9916 [Arian]
+53766e8c0b27 input: touchscreen: gt9897t: Don't register when TP is focal on K9 [Arian]
+989d1b4b93a0 input: touchscreen: gt9897t: Set the default fw and cfg based on hw project [Arian]
+b161b042cc24 input: touchscreen: Import Goodix 9897 driver [Arian]
+e3924d13d37f input: touchscreen: gt9916: trigger fod hbm [Ramii Ahmed]
+00ce8f7a700a input: touchscreen: gt9916: Omit mi_disp_set_fod_queue_work [Giovanni Ricca]
+46e5dde4c592 input: touchscreen: gt9916: Make it load on taoyao [Giovanni Ricca]
+1ea64154842d input: touchscreen: Import Goodix 9916 driver [Giovanni Ricca]
+9e65152cb811 input: touchscreen: Import FTS V521 Dual driver [Arian]
+855734084226 input: touchscreen: fts_spi: Fix strict-prototypes error [FlowerSea0208]
+0c076099a208 input: touchscreen: fts_spi: Update fod press status based on button event [FlowerSea0208]
+a376cc3bf02d input: touchscreen: fts_spi: Switch to mi_disp_notifier [EcrosoftXiao]
+c399eaa7d97d input: touchscreen: fts_spi: trigger fod hbm [Cosmin Tanislav]
+27abf3f1a031 input: touchscreen: fts_spi: report FOD press based on pointer event in non-sleep mode [Cosmin Tanislav]
+e1b51cb8eb12 input: touchscreen: fts_spi: expose fod_status via sysfs [Cosmin Tanislav]
+fbd0688d8510 input: touchscreen: fts_spi: introduce fts mode handler worker [Cosmin Tanislav]
+adb9a82c56ed input: touchscreen: fts_spi: Omit mi_disp_set_fod_queue_work [Giovanni Ricca]
+8f8489a8fb06 input: touchscreen: fts_spi: Sync with updated xiaomi-touch driver [Giovanni Ricca]
+5bf36c2e9507 input: touchscreen: Import FTS V521 driver [Arian]
+53ee4fea8da2 input: touchscreen: focaltech_3680: Omit mi_disp_set_fod_queue_work [Giovanni Ricca]
+023a951e29be input: touchscreen: Import Focaltech 3680 driver [Giovanni Ricca]
+0c5e41a3db79 input: touchscreen: focaltech_3658u: Fix prototype error [Arian]
+5d15800b7689 input: touchscreen: Import Focaltech 3658u driver [Arian]
+0b3dfc2d7431 input: touchscreen: focaltech_spi: Fix prototype errors [Giovanni Ricca]
+cc3c3a8c456c input: touchscreen: Import Focaltech driver [Arian]
+0045429682f1 input: touchscreen: cyttsp5: Fix strict-prototypes error [FlowerSea0208]
+e7bf4ec47e2c input: touchscreen: Import Parade TrueTouch Gen5 driver [Arian]
+a7f8e67ab40e Import NXP SR100 ultra wideband driver [Giovanni Ricca]
+08f8e92d97cb soc: qcom: icnss2: Use device specific firmware versions [Giovanni Ricca]
+2eb44364250a net: wireless: cnss2: Use device specific firmware versions [Arian]
+ab945d81bb70 soc: qcom: Reduce smp2p_sleepstate wakeup event time [Giovanni Ricca]
+edff9464aa04 misc: Import mmhardware detection [Giovanni Ricca]
+a181391efbac misc: Import AL6021 ISP driver [Giovanni Ricca]
+f194657aee6f misc: Introduce simplified xiaomi hardware identification driver [Arian]
+7f1369dbf401 spi: spi-msm-geni: Enlarge SPI timeout [Giovanni Ricca]
+439d3d4ad736 pinctrl: qcom: Import Xiaomi changes [Giovanni Ricca]
+de547ab9011e thermal: Import Xiaomi changes [Giovanni Ricca]
+b1d857a95193 power: reset: Import xiaomi changes [Arian]
+97ea91dfcbf8 power: supply: qti_battery_charger: Import redwood changes [TheStrechh]
+cfa451ea0873 power: supply: qti_battery_charger: Guard power properties changes against Venus [Ramii Ahmed]
+1359712fcf1c power: supply: qti_battery_charger: change the measuring unit of TIME_TO_FULL_AVG property [FlowerSea0208]
+d13357969381 power: supply: qti_battery_charger: Move xiaomi adapter definitions to header [TheStrechh]
+a5d21dfd1f44 power: supply: Introduce qti_battery_charger_xiaomi [Arian]
+3e1cab00bb21 Fixup! power: supply: qti_battery_charger: Return charge counter in uAh [Arian]
+e96db822c382 power: supply: qti_battery_charger: Return charge counter in uAh [Arian]
+31182b43e752 power: supply: qti_battery_charger: Apply xiaomi changes [Arian]
+553b76a40687 power: supply: qti_battery_charger: Create header for defines, enums and structs [Arian]
+2bdbaf601946 usb: Import Xiaomi changes [Arian]
+1e6ef723b82e media: rc: ir-spi: Import Xiaomi changes [Arian]
+c67fed60441f iio: proximity: Add mius kconfig [Arian]
+196fa1928258 sound: soc: pcm: support host-less 24bit formats [Demon000]
+a4bc256e4848 treewide: Fix compilation after disabling -fno-builtin [Kristof Petho]
+e543b692f5b5 audio: asoc: remove build timestamp [Cosmin Tanislav]
+ed41515f2d53 audio: asoc: Disable UART debugging [Giovanni Ricca]
+b8ecd817992b audio: dsp: Define CONFIG_QGKI_SYSTEM if mius is enabled [Adithya R]
+0c96b3d3c215 asoc: lahaina: Report correct key code of headset buttons [dianlujitao]
+395285b1f3fa audio: asoc: Update dai link ID for renoir [Arian]
+1a6a38281d75 audio: asoc: wcd938x: Fixup mmhardware_sysfs include path [Giovanni Ricca]
+9c0781b4acb1 audio: Add mars guards as well [FlowerSea0208]
+7001ca346a4c audio: Update from redwood-s-oss [Giovanni Ricca]
+e59eb6fb9114 audio: Update from zijin-s-oss [Arian]
+8652c4951450 audio: Import xiaomi changes [Arian]
+8b34e50f24ad audio: asoc: Import iio us proximity [Giovanni Ricca]
+95c30cff6007 audio: dsp: Import mius [Giovanni Ricca]
+95d127ac0b8d audio: dsp: Import elliptic [Giovanni Ricca]
+1cc3484ffd54 audio: asoc: tfa98xx: Fix misleading indentation [Giovanni Ricca]
+b16415263a79 audio: asoc: Import tfa98xx codec [Giovanni Ricca]
+a63ab3cb7366 audio: asoc: Import tfa9874 codec [Giovanni Ricca]
+16ce73bf6e9b audio: asoc: Import cs35l45 codec [Giovanni Ricca]
+51a74f8f8104 audio: asoc: Import cs35l41 codec [Giovanni Ricca]
+8b8be25c6aaa audio: asoc: Import aw88263s_m20 codec [Giovanni Ricca]
+e093d687fb46 audio: asoc: Import aw88263s codec [Giovanni Ricca]
+e13b7cad5637 Revert "asoc: lahaina: add 16 channel support on tdm interface" [Giovanni Ricca]
+5913eb4cc4b3 techpack: camera: Add wait for macro camera on K9E and M20 [Giovanni Ricca]
+243be6efe09e techpack: camera: Haydn is special [Arian]
+7309109455ff techpack: camera: Add wait for AF regulator hw disabling on K11 [Erfan Abdi]
+06c731515805 techpack: camera: Add vana1 to vreg names enum [Erfan Abdi]
+19cf62872005 techpack: camera: cam_isp: Enlarge `max_vfe_out_res` expected size [Giovanni Ricca]
+11425e6179d1 techpack: camera: Enlarge cfg timeout [Giovanni Ricca]
+e3aba523f69c techpack: camera: Increase watchdog timeout [Giovanni Ricca]
+48fb82dd825b techpack: camera: Increase mac ctx value [Giovanni Ricca]
+9259dede9566 techpack: camera: Increase flush requests [Giovanni Ricca]
+32b724d43b5c techpack: camera: ois: import xiaomi changes [Cosmin Tanislav]
+a46d9340313b techpack: camera: core: add support for powering up external isp [Cosmin Tanislav]
+d8e76807c53b techpack: camera: csiphy: Guard overriding csiphy register values [Arian]
+a972e58a9f7c techpack: camera: csiphy: override csiphy register values for higher than 3.5GHz [Cosmin Tanislav]
+d7d5dc3b1c76 techpack: camera: sensor: implement optimization disabling [Cosmin Tanislav]
+bd62335506f7 techpack: camera: req_mgr: do not send timestamp for offline context [Cosmin Tanislav]
+ed4c7d57e0ac techpack: camera: Increase req mgr events further [Arian]
+f844ed09bd8c techpack: camera: increase req mgr events [Cosmin Tanislav]
+f9db96edb7ca techpack: camera: req_mgr: increase max handles to match stock camera module [Cosmin Tanislav]
+cce5dacc9536 techpack: camera: lock cci core read and write operations [Cosmin Tanislav]
+6cd8c3f6ca3e techpack: display: Refactor doze modes [Arian]
+78ae581cc8d7 techpack: display: Notify on fps change events [Arian]
+d0a220495171 techpack: display: Add dynamic_fps node [Arian]
+f7d1676908d8 techpack: display: Change max QP values for selected panel [Giovanni Ricca]
+d1e64db04de0 techpack: display: Read mi dsc panel id [Arian]
+20bc8748ccfd techpack: display: protect setting fod doze status by allow_bl_update [Cosmin Tanislav]
+d1552df63929 techpack: display: protect setting fod hbm status by allow_bl_update [Cosmin Tanislav]
+7c79e52f6a7a drm/msm: fix brightness level mapping [Adrian Salido]
+fc0a06ca7100 techpack: display: move backlight level unsetting to panel [Cosmin Tanislav]
+819a1a628422 Revert "disp: msm: dp: add backlight for edp" [Giovanni Ricca]
+f438d1af50e4 techpack: display: expose requesting fod hbm for primary display [Cosmin Tanislav]
+3b205f8cd645 techpack: display: move hbm mode request into separate function [Cosmin Tanislav]
+3cc1e6a15352 techpack: display: skip sending doze command when fod hbm enabled [Cosmin Tanislav]
+3c93595e6c01 techpack: display: implement fod hbm mode [Cosmin Tanislav]
+983ef5d2d214 techpack: display: implement doze mode [Cosmin Tanislav]
+4cbb2a987760 techpack: display: track display selection type [Cosmin Tanislav]
+162e4a4b01dc techpack: display: track real backlight value [Cosmin Tanislav]
+13be03dce8f1 techpack: display: add mi display notifier [Cosmin Tanislav]
+7c07e335c054 techpack: display: implement mi_get_disp_id [Cosmin Tanislav]
+4dfb20883b69 techpack: display: msm: further increase delay times while waiting to turn off rscc clocks [Cosmin Tanislav]
+f563cb346007 techpack: display: modify lp11 handling [Cosmin Tanislav]
+3254191f9bde techpack: display: adjust dphy registers based on clock strength [Cosmin Tanislav]
+dbb039b8b1d1 HACK: binder: Disable freeze related ioctls [LuK1337]
+7763b779133c drivers: soc: spss_utils: Handle error return from copy_to_user [Jeevan Shriram]
+1cb4dd424c0a ANDROID: gki_defconfig: Enable __must_check attribute [Alexander Winkowski]
+c44d318ed52f crypto: qcedev: Const-ify the SHA initialisation vectors [Diab Neiroukh]
+7ff0bebf0854 thermal_debugfs: Avoid sscanf buffer overflow [Alexander Winkowski]
+073b83c660ed kbuild: Remove '-mno-global-merge' [Nathan Chancellor]
+d08c6ed9a9f8 Makefile: Remove obsolete -fno-builtin flag [Danny Lin]
+ce0b2a68daee Revert "ANDROID: HACK: arm64, LLVMLinux: use -mno-implicit-float" [Danny Lin]
+7efeb318e613 msm: ipa3: Silence PM notifier log spam [Sultan Alsawaf]
+5e1c6038ae6d arm64: configs: holi-qgki: Update LSE config name [Alexander Winkowski]
+32d61a920750 techpack: dataipa: Fix compilation without PCI [Alexander Winkowski]
+94d6576f66a0 input: touchscreen: synaptics_tcm: Fix Kconfig [Alexander Winkowski]
+2b4c5934059c irqchip: qcom-mpm: Do not break s2idle suspend [Maulik Shah]
+dfb3308a2dbd irqchip: qcom-mpm: Add IRQCHIP_SET_TYPE_MASKED flag [Maulik Shah]
+33a51c4eb337 irqchip: mpm: Remove IRQF_NO_SUSPEND from mpm irq request [Raghavendra Kakarla]
+
+* lineage/wiki
+f663b37 wiki: signing_builds: Fix make_key typo [razorloves]
+
+* packages/apps/Aperture
+c9d50d1 Aperture: Hide camera mode highlight button in single capture mode too [LuK1337]
+
+* packages/apps/Settings
+6796f7b fixup! Settings: Add high touch sensitivity and touchscreen hovering toggles [Dhina17]
+
+* packages/apps/Trebuchet
+616e3f0 Increase blur radius [Alexander Winkowski]
+fdbea5c DepthController: Change blur radius to dimension resource [Danny Lin]
+d62d1fe Disable blur on app launch [Alexander Winkowski]
+6f6031d Make scrim transparent [Alexander Winkowski]
+1ede1ab Trebuchet: Move clear all button to actions view [Vachounet]
+25c12cb Launcher3: Add toggle for DT2S [DennySPB]
+13b52d4 Launcher3: Double tap on home screen to turn off screen [Thecrazyskull]
+
+* packages/inputmethods/LatinIME
+0e8c425 LatinIME: fix gesture typing [johnny]
+1836bb8 Revert "LatinIME: Add fallback loader for JNI lib" [nift4]
+
+* packages/modules/Bluetooth
+9918d27 Revert "[Invisalign2] Separate security fields from tBTM_SEC_DEV_REC" [Dmitry Muhomor]
+a54895c Revert "[Invisalign2] move btm_ble_increment_sign_ctr to tBTM_SEC_REC" [Dmitry Muhomor]
+5e8aa97 Revert "[Invisalign2] make enc_handle public and remove friends" [Dmitry Muhomor]
+1f52a2c Revert "[Invisalign2] Encapsulate the following methods" [Dmitry Muhomor]
+05d9643 Revert "[Invisalign2] Encapsulate tBTM_SEC_CB::AddService" [Dmitry Muhomor]
+e382ec2 Revert "[Invisalign2] Encapsulate tBTM_SEC_CB::RemoveServiceById" [Dmitry Muhomor]
+b4f05a4 Revert "[Invisalign2] Encapsulate tBTM_SEC_CB::RemoveServiceByPsm" [Dmitry Muhomor]
+0e8dea2 Revert "[Invisalign2] Encapsulate tBTM_SEC_CB::IsDeviceBonded" [Dmitry Muhomor]
+fe80496 Revert "[Invisalign2] Enacapsulate btm_pair_state_descr" [Dmitry Muhomor]
+a82c155 Revert "[Invisalign2] Encapsulate tBTM_SEC_CB::change_pairing_state" [Dmitry Muhomor]
+124998c Revert "Copy the keys when re-pairing with a new RPA/IRK" [Dmitry Muhomor]
+aab5fba fix use-after-free for sink/source metadata [Daniel Micay]
+
+* system/core
+0052f0421 init: Report valid verified boot for SafetyNet checks [Danny Lin]
+
+* vendor/qcom/opensource/libfmjni
+16a167c libfmjni: Don't call `pthread_join` on `Pwr_down` [Giovanni Ricca]
+2c9d813 libfmjni: Fix RDS info retrieving [iusmac]
+
+* vendor/xiaomi/lisa
+affb022 lisa: Pin `modem.img` from V14.0.2.0.TKOMIXM [Giovanni Ricca]
+
+* vendor/xiaomi/miuicamera-lisa
+697e57a Cleanup sepolicy for lisa [Giovanni Ricca]
+
+====================
+     2024-04-18    
+====================
+* device/xiaomi/lisa
+c309b5c lisa: Setup firmware extraction [LuK1337]
+93ae785 lisa: rro_overlays: Enable SecureNfc [Giovanni Ricca]
+b397a41 lisa: sku: Set bluetooth device name with SKU props [Giovanni Ricca]
+3c29ceb lisa: Add SKU props from stock [Alexander Winkowski]
+ae16ac5 lisa: overlay: Remove obsolete config_keyboardTapVibePattern [Bruno Martins]
+
+* device/xiaomi/sm8350-common
+8c6f4bb sm8350-common: Update blobs to haydn V816.0.1.0.UKKCNXM [Giovanni Ricca]
+e43d0d0 sm8350-common: Don't explicitly include updatable_apex.mk [basamaryan]
+bb1ee74 sm8350-common: gps: Don't include cutils/threads.h [Tomasz Wasilczyk]
+ba866b0 sm8350-common: Add BUILD_BROKEN_INCORRECT_PARTITION_IMAGES [Cole Faust]
+5e95664 sm8350-common: Disable display refresh rate override [Edwin Moquete]
+74c90ee sm8350-common: sepolicy: Remove unused rules [Alexander Winkowski]
+2f87841 sm8350-common: sepolicy: Rework batterysecret rules [Alexander Winkowski]
+0a92ee3 sm8350-common: sepolicy: Simplify fingerprint rules [Alexander Winkowski]
+4d761e6 sm8350-common: Keep building health HIDL interface lib in vendor [Sebastiano Barezzi]
+662a3fa sm8350-common: Inherit common partition reserved sizes [Michael Bestas]
+5abee74 sm8350-common: Allow extracting only firmware images [Bruno Martins]
+
+* device/xiaomi/xaga
+d7701ee [DNM] xaga: Ship eng preloader image [Giovanni Ricca]
+
+* vendor/extra/priv
+b0a6a58 patches: lineage-21: HyperOS Update [Giovanni Ricca]
+
+* vendor/xiaomi/sm8350-common
+acdebec sm8350-common: Update blobs to haydn V816.0.1.0.UKKCNXM [Giovanni Ricca]
+
+====================
+     2024-04-17    
+====================
+* device/xiaomi/mt6895-common
+e6aebae mt6895-common: overlay: Merge xaga CarrierConfig [Giovanni Ricca]
+
+* kernel/xiaomi/sm8350
+eff9f8bc091e BACKPORT: erofs: fix lz4 inplace decompression [Gao Xiang]
+00562d05e41b erofs: clean up file headers & footers [Gao Xiang]
+4bbc3889daaf ANDROID: Enable percpu high priority kthreads for erofs [Sandeep Dhavale]
+9d17a27cd2a6 UPSTREAM: erofs: fix an error code in z_erofs_init_zip_subsystem() [Dan Carpenter]
+28cf4d2421d0 BACKPORT: erofs: add per-cpu threads for decompression as an option [Sandeep Dhavale]
+9044855f697b sched: Provide sched_set_fifo() [Peter Zijlstra]
+b8c82fad28c5 BACKPORT: erofs: fix use-after-free of on-stack io[] [Hongyu Jin]
+6524dbf7db2e erofs: fix deadlock when shrink erofs slab [Huang Jianan]
+afd83285dd74 UPSTREAM: erofs: fix 1 lcluster-sized pcluster for big pcluster [Gao Xiang]
+478be4317db1 UPSTREAM: erofs: enable big pcluster feature [Gao Xiang]
+4fe90863df5d BACKPORT: erofs: support decompress big pcluster for lz4 backend [Gao Xiang]
+e0dc41790aa2 UPSTREAM: erofs: support parsing big pcluster compact indexes [Gao Xiang]
+31e1adf51f18 UPSTREAM: erofs: support parsing big pcluster compress indexes [Gao Xiang]
+f543d2f73455 UPSTREAM: erofs: adjust per-CPU buffers according to max_pclusterblks [Gao Xiang]
+36a716d1544f UPSTREAM: erofs: add big physical cluster definition [Gao Xiang]
+a74799fb2923 UPSTREAM: erofs: fix up inplace I/O pointer for big pcluster [Gao Xiang]
+189c5df5d35a UPSTREAM: erofs: introduce physical cluster slab pools [Gao Xiang]
+03acb9024bee UPSTREAM: erofs: introduce multipage per-CPU buffers [Gao Xiang]
+84034f009d08 UPSTREAM: erofs: remove a void EROFS_VERSION macro set in Makefile [Vladimir Zapolskiy]
+333627f40108 UPSTREAM: erofs: reserve physical_clusterbits[] [Gao Xiang]
+db44811652d6 UPSTREAM: erofs: Clean up spelling mistakes found in fs/erofs [Ruiqi Gong]
+8c06a4b8fff6 UPSTREAM: erofs: add on-disk compression configurations [Gao Xiang]
+9a890363dba2 UPSTREAM: erofs: introduce on-disk lz4 fs configurations [Gao Xiang]
+00873ba01b16 UPSTREAM: erofs: introduce erofs_sb_has_xxx() helpers [Gao Xiang]
+33efea0271a7 UPSTREAM: erofs: don't use erofs_map_blocks() any more [Yue Hu]
+8ccbd0cae994 UPSTREAM: erofs: complete a missing case for inplace I/O [Gao Xiang]
+5c4e6ce1685b UPSTREAM: erofs: support adjust lz4 history window size [Huang Jianan]
+2e36d10d7f0c UPSTREAM: erofs: use sync decompression for atomic contexts only [Huang Jianan]
+7eb2ac540a45 UPSTREAM: erofs: use workqueue decompression for atomic contexts only [Huang Jianan]
+cdb254fa4d3d UPSTREAM: erofs: avoid memory allocation failure during rolling decompression [Huang Jianan]
+534c9f0a10ce UPSTREAM: erofs: force inplace I/O under low memory scenario [Gao Xiang]
+6e297fc3c6e8 UPSTREAM: erofs: insert to managed cache after adding to pcl [Gao Xiang]
+ae779c41c583 UPSTREAM: erofs: get rid of magical Z_EROFS_MAPPING_STAGING [Gao Xiang]
+9811f088fc07 include/linux/pagemap.h: introduce attach/detach_page_private [Guoqing Jiang]
+93ebc7df59a9 erofs: don't trigger WARN() when decompression fails [Gao Xiang]
+74a9822fdae4 erofs: fix error return code in erofs_read_superblock() [Wei Yongjun]
+d0d2e8ba3553 erofs: fix setting up pcluster for temporary pages [Gao Xiang]
+6e324b8d4195 erofs: remove unnecessary enum entries [Chengguang Xu]
+52f906c32554 erofs: fold in should_decompress_synchronously() [Gao Xiang]
+
+* lineage/mirror
+6dba409 Updated aosp-minimal to 16-Apr-2024 12:02 UTC [Tim Schumacher]
+
+* vendor/extra
+e1d6a73 FrameworksResOverlay: Downscale task snapshots to 80% [Danny Lin]
+
+====================
+     2024-04-16    
+====================
+* frameworks/base
+bf34fd7de Automatic translation import [LineageOS Infra]
+
+* kernel/xiaomi/mt6895
+a4cc0c5a6d56 ANDROID: Add build configs for Xiaomi MT6895 family [bengris32]
+9b8ac298bba0 FROMLIST: binder: check offset alignment in binder_get_object() [Carlos Llamas]
+4237f0d4c274 [ALPS08143548] GPU: GPUSWERRATA-1724 [Daniel Tao]
+ce3f884848f2 [ALPS07885905] GPU: GPUSWERRATA-1546 [mtk31598]
+74777b362475 [ALPS07456516] wlan: fix memory access violation [Rachel Tseng]
+39332e2516d1 [ALPS07456516] wlan: fix memory access violation [Rachel Tseng]
+73bc9b1024cc [ALPS07988318] security: remove unused proc node [Rachel Tseng]
+7599799505b2 ARM64: dts: mt6895: Enable Lazy RCU by default [bengris32]
+e235bca467ba [ALPS08169268] GPU: GPUSWERRATA-1617 (1/2) [Daniel Tao]
+8a6f7ad7cc72 [ALPS08169268] GPU: GPUSWERRATA-1585 [Daniel Tao]
+883af5f70c4a drivers: mali-valhall: use rt_mutex for CSF lock [Kevin DuBois]
+f93f41bea272 drivers: mali-valhall: move pending_submission_work to realtime kthread [Devika Krishnadas]
+80ff19969295 drivers: mali-valhall: upgrade CSF management thread to realtime. [Kevin DuBois]
+73c88b10831f drivers: mali-valhall: Make some event wakeups synchronous [Devika Krishnadas]
+e435d148a3b0 drivers: mali-valhall: Move all RT threads onto a coremask [Sidath Senanayake]
+dedba8fba6e9 drivers: mali-valhall: Disable MediaTek memtrack support [bengris32]
+b3799d0f72e2 drivers: mali-valhall: Disable debugging [electimon]
+515c78057157 drivers: mali-valhall: Fix for ringbuffer alloc failure [ot904807]
+58ed6d803d5c drivers: mali-valhall: bail out shrinking if the lock is contended [Minchan Kim]
+f03402ed7b42 drivers: mali-valhall: change to use rt_mutex [Wei Wang]
+1f15fe42300f drivers: mali-valhall: Improve DVFS utilization accuracy [Sultan Alsawaf]
+9f43d1b177a9 ARM64: vendor: xaga: Switch to HyperOS CN blobs [Giovanni Ricca]
+0956a131544b ARM64: configs: vendor: xaga: Enable specfic device configs [Giovanni Ricca]
+6fd1c98e81d9 lens: dw9800v: Add missing xaga guard [Giovanni Ricca]
+92b329815816 power: supply: sc8561: Initializate xaga [Giovanni Ricca]
+f15f2e0cf506 power: supply: sc8551: Initializate xaga [Giovanni Ricca]
+7162f57a839f power: supply: pd_cp_manager: Initializate xaga [Giovanni Ricca]
+a2810f1b32dc power: supply: mtk_pd_adapter: Initializate xaga [Giovanni Ricca]
+0ae0c1114dab power: supply: mtk_charger: Initializate xaga [Giovanni Ricca]
+6df85cef8206 power: supply: ln8000: Initializate xaga [Giovanni Ricca]
+69926055a80a power: supply: bq28z610: Initializate xaga [Giovanni Ricca]
+44034e87b0ff drm: panel: l16: Include `mi_dsi_panel.h` [Giovanni Ricca]
+facac0e31f1a drm: panel: Import `l16-36-02-0b-dsc` & `l16-42-02-0a-dsc` panels [Giovanni Ricca]
+7b819f23d52f arm64: boot: dts: Import xaga dts [Giovanni Ricca]
+
+* kernel/xiaomi/sm8350
+d5c15fcdcc7f erofs: avoid unnecessary variable `err' [Gao Xiang]
+8e64e25ad745 erofs: remove unneeded parameter [Chao Yu]
+c2741e1cce4a erofs: Use fallthrough pseudo-keyword [Gustavo A. R. Silva]
+65a6af649643 erofs: remove WQ_CPU_INTENSIVE flag from unbound wq's [Gao Xiang]
+e751287ae482 erofs: fold in used-once helper erofs_workgroup_unfreeze_final() [Gao Xiang]
+7a343c42b9d5 erofs: Replace HTTP links with HTTPS ones [Alexander A. Klimov]
+b94bd57a803f erofs: Remove uninitialized_var() usage [Kees Cook]
+9316ac8cd69c erofs: suppress false positive last_block warning [Gao Xiang]
+7c697abfc76a erofs: Adapt to <5.6 fsparam_enum [Michael Bestas]
+bc0e73e6ead1 erofs: convert to use the new mount fs_context api [Chao Yu]
+3556e994ac0c erofs: code cleanup by removing ifdef macro surrounding [Chengguang Xu]
+3f69c57df781 erofs: handle corrupted images whose decompressed size less than it'd be [Gao Xiang]
+62a86985dfd7 erofs: use LZ4_decompress_safe() for full decoding [Gao Xiang]
+69ddc63110e5 erofs: convert workstn to XArray [Gao Xiang]
+ef878d217f12 erofs: clean up z_erofs_submit_queue() [Gao Xiang]
+1972549147d8 erofs: fold in postsubmit_is_all_bypassed() [Gao Xiang]
+2b968c0f045d erofs: remove void tagging/untagging of workgroup pointers [Vladimir Zapolskiy]
+795dc2d9425b erofs: remove unused tag argument while registering a workgroup [Vladimir Zapolskiy]
+8353c5446e8b erofs: remove unused tag argument while finding a workgroup [Vladimir Zapolskiy]
+a7b2c0500674 erofs: correct indentation of an assigned structure inside a function [Vladimir Zapolskiy]
+b6f2a7b17066 erofs: remove unnecessary output in erofs_show_options() [Chengguang Xu]
+6ed324732de9 erofs: drop all vle annotations for runtime names [Gao Xiang]
+290c49c74e17 erofs: support superblock checksum [Pratik Shinde]
+fe851dcc3bbd erofs: set iowait for sync decompression [Gao Xiang]
+bffca72f25b8 erofs: clean up decompress queue stuffs [Gao Xiang]
+8436623a4e65 erofs: get rid of __stagingpage_alloc helper [Gao Xiang]
+8742d3d4c3f0 erofs: remove dead code since managed cache is now built-in [Gao Xiang]
+e180682c2991 erofs: clean up collection handling routines [Gao Xiang]
+9cfc7508b51d lz4: fix kernel decompression speed [Nick Terrell]
+d561bf243bf9 Merge branch 'for-kernel-version-from-4.1.0' of https://github.com/namjaejeon/linux-exfat-oot into android13-5.4-lahaina [Michael Bestas]
+
+* packages/apps/Car/Settings
+c92c227 Automatic translation import [LineageOS Infra]
+
+* packages/apps/Dialer
+fa7adc3 Automatic translation import [LineageOS Infra]
+
+* packages/apps/Jelly
+7e67117 Automatic translation import [LineageOS Infra]
+
+* packages/apps/LineageParts
+158d243 Automatic translation import [LineageOS Infra]
+
+* packages/apps/SetupWizard
+6665ca7 Automatic translation import [LineageOS Infra]
+
+* packages/apps/TvSettings
+10c5171 Automatic translation import [LineageOS Infra]
+
+* vendor/crowdin
+3d4606b Automatic translation import [LineageOS Infra]
+
+* vendor/extra
+5fcdc25 vendorsetup: los_lunch: Check if the var is set instead [Giovanni Ricca]
+
+* vendor/extra/tools/releases/LineageOS_lisa
+69aa27a LineageOS_lisa: lineage-21: 20240415 [Giovanni Ricca]
+
+* vendor/extra/tools/releases/LineageOS_miatoll
+a81deb9 LineageOS_miatoll: lineage-21: 20240415 [Giovanni Ricca]
+
+* vendor/extra/tools/releases/LineageOS_xaga
+bb746e9 LineageOS_xaga: lineage-21: 20240415 [Giovanni Ricca]
+
+* vendor/extra/tools/releases/LineageOS_ysl
+85cddb4 LineageOS_ysl: lineage-21: 20240415 [Giovanni Ricca]
+
+* vendor/xiaomi/xaga
+7437ce9 xaga: Sync with tree [Giovanni Ricca]
+
+====================
+     2024-04-15    
+====================
+* device/qcom/sepolicy-legacy-um
+84869e5 legacy: Add common telephony rules [Bruno Martins]
+
+* lineage/hudson
+423ec19 hudson: Resume builds for gemini and natrium [Bruno Martins]
+
+* vendor/extra/tools/releases/LineageOS_daisy
+3be970c LineageOS_daisy: lineage-21: 20240415 [Giovanni Ricca]
+
+* vendor/extra/tools/releases/LineageOS_sakura
+2d93e3f LineageOS_sakura: lineage-21: 20240415 [Giovanni Ricca]
+
+====================
+     2024-04-14    
+====================
+====================
+     2024-04-13    
+====================
+* build/make
+5c2a197 releasetools: Make recovery patch use bsdiff exclusively [Gérard Parat]
+
+* frameworks/opt/telephony
+a97d6d0 Revert "Clear up the obsoleted cascading signal strength polling logic" [Han Sol Jin]
+
+* packages/modules/Wifi
+634862c Fix the issue of not sending p2p connection change broadcast to app with PERMISSION_MAINLINE_NETWORK_STACK [Shuibing Dai]
+
