@@ -3,13 +3,19 @@
 ## Otaserver for POCO X4 GT ##
 
 ### Supported devices ###
+
 - POCO X4 GT / Redmi Note 11T Pro (xaga)
 - Redmi K50i (xagain)
-- POCO X4 GT Pro / Redmi Note 11T Pro+ (xagapro)
-- Redmi K50i Pro (xagaproin)
+- Redmi Note 11T Pro+ (xagapro)
 
-Read the instructions carefully from [Here](https://itsvixano.gitlab.io/lineageos_flashing/)
+### Known Quirks ###
 
-Report a bug by following [this page](https://guide.itsvixano.me/troubleshooting/)
+- Laggy ViewFinder & Laggy Videos taken from the Camera
+- Videos play at 30fps on 60hz
+- Prebuilt dtbo
+
+Read the instructions carefully from [Here](http://wiki.itsvixano.me)
+
+Report a bug by following [this page](https://wiki.itsvixano.me/troubleshooting)
 
 [![Release downloads](https://img.shields.io/github/downloads/ItsVixano-releases/LineageOS_xaga/total.svg)](https://github.com/ItsVixano-releases/LineageOS_xaga/releases/)
