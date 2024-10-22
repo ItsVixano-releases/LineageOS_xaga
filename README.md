@@ -10,7 +10,6 @@
 
 ### Known Quirks ###
 
-- Laggy ViewFinder & Laggy Videos taken from the Camera
 - Prebuilt dtbo
 
 Read the instructions carefully from [Here](http://wiki.itsvixano.me)
