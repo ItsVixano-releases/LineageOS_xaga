@@ -1,3 +1,13 @@
 {
-  "response": []
+  "response": [
+    {
+      "datetime": 1737978183,
+      "filename": "lineage-22.1-20250127-UNOFFICIAL-xaga.zip",
+      "id": "ac221212fc09fc5fa4574500cfa74ac0d5b0938e7363b0587c5f0500adc830d1",
+      "romtype": "unofficial",
+      "size": 1471944065,
+      "url": "https://github.com/ItsVixano-releases/LineageOS_xaga/releases/download/20250127/lineage-22.1-20250127-UNOFFICIAL-xaga.zip",
+      "version": "22.1"
+    }
+  ]
 }
